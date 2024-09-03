@@ -23,10 +23,8 @@ public class CircleTests
         // Arrange
         double radius = -1;
 
-        // Act
+        // Act & Assert
         var ex = Assert.Throws<ArgumentException>(() => new Circle(radius));
-
-        // Assert
         Assert.Equal("Radius must be positive.", ex.Message);
     }
 
@@ -36,10 +34,8 @@ public class CircleTests
         // Arrange
         double radius = 0;
 
-        // Act
+        // Act & Assert
         var ex = Assert.Throws<ArgumentException>(() => new Circle(radius));
-
-        // Assert
         Assert.Equal("Radius must be positive.", ex.Message);
     }
 }

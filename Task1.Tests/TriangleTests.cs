@@ -25,10 +25,8 @@ public class TriangleTests
         double side2 = 2;
         double side3 = 3;
 
-        // Act
+        // Act & Assert
         var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
-
-        //Assert
         Assert.Equal("The provided sides do not form a valid triangle.", ex.Message);
     }
 
@@ -40,10 +38,8 @@ public class TriangleTests
         double side2 = 2;
         double side3 = 3;
 
-        // Act
+        // Act & Assert
         var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
-
-        //Assert
         Assert.Equal("Sides must be positive.", ex.Message);
     }
 
@@ -55,10 +51,8 @@ public class TriangleTests
         double side2 = 2;
         double side3 = 3;
 
-        // Act
+        // Act & Assert
         var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
-        
-        //Assert
         Assert.Equal("Sides must be positive.", ex.Message);
     }
 
