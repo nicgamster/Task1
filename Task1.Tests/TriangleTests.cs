@@ -18,31 +18,49 @@ public class TriangleTests
     }
 
     [Fact]
-    public void FlatTriangle_AreaIsZero()
+    public void Constructor_InvalidTriangle_ThrowsException()
     {
         // Arrange
-        Figure triangle = new Triangle(5, 5, 10);
+        double side1 = 1;
+        double side2 = 2;
+        double side3 = 3;
 
         // Act
-        double result = triangle.Area();
+        var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
 
-        // Assert
-        Assert.Equal(0, result);
+        //Assert
+        Assert.Equal("The provided sides do not form a valid triangle.", ex.Message);
     }
 
     [Fact]
-    public void IncorrectTriangle_AreaIsNaN()
+    public void Constructor_NegativeSide_ThrowsException()
     {
         // Arrange
-        Figure triangle = new Triangle(5, 5, 11);
+        double side1 = -1;
+        double side2 = 2;
+        double side3 = 3;
 
         // Act
-        double result = triangle.Area();
+        var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
 
-        // Assert
-        Assert.Equal(double.NaN, result);
+        //Assert
+        Assert.Equal("Sides must be positive.", ex.Message);
     }
 
+    [Fact]
+    public void Constructor_ZeroSide_ThrowsException()
+    {
+        // Arrange
+        double side1 = 0;
+        double side2 = 2;
+        double side3 = 3;
+
+        // Act
+        var ex = Assert.Throws<ArgumentException>(() => new Triangle(side1, side2, side3));
+        
+        //Assert
+        Assert.Equal("Sides must be positive.", ex.Message);
+    }
 
 
     [Fact]

@@ -18,15 +18,28 @@ public class CircleTests
     }
 
     [Fact]
-    public void FlatCircle_AreaIsZero()
+    public void Constructor_NegativeRadius_ThrowsException()
     {
         // Arrange
-        Figure circle = new Circle(0);
+        double radius = -1;
 
         // Act
-        double result = circle.Area();
+        var ex = Assert.Throws<ArgumentException>(() => new Circle(radius));
 
         // Assert
-        Assert.Equal(0, result);
+        Assert.Equal("Radius must be positive.", ex.Message);
+    }
+
+    [Fact]
+    public void Constructor_ZeroRadius_ThrowsException()
+    {
+        // Arrange
+        double radius = 0;
+
+        // Act
+        var ex = Assert.Throws<ArgumentException>(() => new Circle(radius));
+
+        // Assert
+        Assert.Equal("Radius must be positive.", ex.Message);
     }
 }

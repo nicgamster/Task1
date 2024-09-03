@@ -2,17 +2,22 @@
 
 public class Circle : Figure
 {
-    private double _radius;
+    public double Radius { get; set; }
 
     public Circle(double radius)
     {
-        _radius = radius;
+        if (radius <= 0)
+        {
+            throw new ArgumentException("Radius must be positive.");
+        }
+
+        Radius = radius;
     }
 
 
 
     public override double Area()
     {
-        return Math.PI * _radius * _radius;
+        return Math.PI * Radius * Radius;
     }
 }
