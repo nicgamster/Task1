@@ -2,17 +2,17 @@
 
 public class Circle : Figure
 {
-	public double _radius { get; set; }
+    private double _radius;
 
-	public Circle(double radius)
-	{
+    public Circle(double radius)
+    {
         _radius = radius;
-	}
+    }
 
 
 
-	public override double Area()
-	{
-		return Math.PI * _radius * _radius;
-	}
+    public override double Area()
+    {
+        return Math.PI * _radius * _radius;
+    }
 }
