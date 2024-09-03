@@ -18,7 +18,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void Constructor_InvalidTriangle_ThrowsException()
+    public void InvalidTriangle_ThrowsException()
     {
         // Arrange
         double side1 = 1;
@@ -33,7 +33,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void Constructor_NegativeSide_ThrowsException()
+    public void NegativeSide_ThrowsException()
     {
         // Arrange
         double side1 = -1;
@@ -48,7 +48,7 @@ public class TriangleTests
     }
 
     [Fact]
-    public void Constructor_ZeroSide_ThrowsException()
+    public void ZeroSide_ThrowsException()
     {
         // Arrange
         double side1 = 0;

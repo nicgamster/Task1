@@ -2,7 +2,7 @@
 
 public class Circle : Figure
 {
-    public double Radius { get; set; }
+    public double Radius { get; }
 
     public Circle(double radius)
     {

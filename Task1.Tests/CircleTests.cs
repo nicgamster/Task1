@@ -18,7 +18,7 @@ public class CircleTests
     }
 
     [Fact]
-    public void Constructor_NegativeRadius_ThrowsException()
+    public void NegativeRadius_ThrowsException()
     {
         // Arrange
         double radius = -1;
@@ -31,7 +31,7 @@ public class CircleTests
     }
 
     [Fact]
-    public void Constructor_ZeroRadius_ThrowsException()
+    public void ZeroRadius_ThrowsException()
     {
         // Arrange
         double radius = 0;
